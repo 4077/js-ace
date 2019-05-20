@@ -30,6 +30,10 @@ var __nodeNs__ = "js_ace";
             session.setMode("ace/mode/" + o.mode);
             session.setValue(o.code);
 
+            $("textarea", $w).bind("keydown." + __nodeId__ + ", keyup." + __nodeId__, function (e) {
+                e.stopPropagation();
+            });
+
             //
 
             var Range = require('ace/range').Range;
